@@ -95,3 +95,5 @@ Consiste en que los donadores aporten Nears para apoyar al programa social y est
 ```
 near call username.testnet fondearProyecto '{"id": id, "cantidad": cantidad}' --account-id username.testnet
 ```
+**5. Video demo con la funcionalidad del contrato:**
+https://youtu.be/OlqeNEvVXII
