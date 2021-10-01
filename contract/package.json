@@ -1,0 +1,18 @@
+{
+  "name": "seedinghope",
+  "version": "1.0.1",
+  "license": "Implementación de un smart contract",
+  "main": "index.js",
+  
+  "scripts": {
+    "test": "asp",
+    "build": "asb",
+    "deploy:dev": "yarn build && near dev-deploy"    
+  },
+  "dependencies": {
+    "near-sdk-as": "3.1.0"
+  },
+  "devDependencies": {
+    "shelljs": "^0.8.4"
+  }
+}
