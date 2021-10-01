@@ -63,8 +63,12 @@ export function nuevoProyecto( nombre: string,
     cantidad: i32,): ProyectosFondeo{      
       assert(<i32>cantidad>0,"la cantidad menor a transferir es 1")
       let proyecto = proyectos[id]
-      assert(proyecto.estado==1,"Este programa sociala ya llegó a su meta y no puede aceptar mas donativos")
-      let diferencia: i32
+      //assert(proyecto.estado==Estado.fondeada,"Este programa social ya llegó a su meta y no puede aceptar mas donativos")
+      if (proyecto.estado==1){
+        logging.log("Este programa social ya llegó a su meta y no puede aceptar mas donativos")
+      }
+      else{
+        let diferencia: i32
       let cantidadMeta: i32
       cantidadMeta =<i32>proyecto.cantidadMeta
       let cantidadFondeada: i32
@@ -79,6 +83,7 @@ export function nuevoProyecto( nombre: string,
       proyectos.replace(<i32>id,proyecto)
       if (proyecto.cantidadFondeada == proyecto.cantidadMeta){
         cambiarEstado(id)
+      }      
       }
       return proyecto
     }
